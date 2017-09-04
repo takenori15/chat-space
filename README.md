@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|------|------|
-|body|text|null: false|
+|body|text|------|
 |image|string|------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
@@ -18,8 +18,8 @@
 
 |Column|Types|Option|
 |------|------|------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
+|name|string|null: false, add_index :users, :name, unique: true|
+|email|string|null: false, add_index :users, :email, unique: true|
 
 ### Association
 
@@ -31,7 +31,7 @@
 
 |Column|Type|Option|
 |------|------|------|
-|group_name|string|------|
+|group_name|string|null: false, add_index :groups, :group_name, unique: true|
 
 ### association
 
