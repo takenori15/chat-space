@@ -1,6 +1,6 @@
 # README
 
-##messagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|------|------|
@@ -9,43 +9,43 @@
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 
 - belongs_to :group
 - belongs_to :user
 
-##usersテーブル
+## usersテーブル
 
 |Column|Types|Option|
 |------|------|------|
 |name|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 
-###Association
+### Association
 
 - has_many :messages
 - has_many :groups, through: :members
 - has_many :members
 
-##groupsテーブル
+## groupsテーブル
 
 |Column|Type|Option|
 |------|------|------|
 |group_name|string|------|
 
-###association
+### association
 
 - has_many :users, through: :members
 - has_many :members
 
-##membersテーブル（中間テーブル）
+## membersテーブル（中間テーブル）
 
 |Column|Type|Option|
 |------|------|------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :group
 
