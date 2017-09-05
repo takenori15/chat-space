@@ -1,3 +1,43 @@
-p {
-  color: red;
+html, body {
+  height: 100%;
+  width: 100%;
+
+  div.side-bar{
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;
+
+    .user {
+      background-color: #253141;
+      height: 98px;
+      width: 100%;
+
+        ul{
+          width: 260px;
+          list-style-type: none;
+          margin: 0 auto;
+
+
+          li.user-name{
+            float: left;
+            padding-top: 36px;
+            p{
+              color: #FFFFFF;
+              font-weight: bold;
+              font-size: 16px;
+            }
+          }
+          li.hello{
+            float: right;
+            padding-top: 36px;
+            p{
+              color: #FFFFFF;
+            }
+          }
+        }
+    }
+  }
 }
+
+
+
