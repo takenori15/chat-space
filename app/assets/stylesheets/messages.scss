@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   width: 100%;
 
-  div.side-bar{
+  .side-bar{
     background-color: #2f3e51;
     height: 100%;
     width: 300px;
@@ -12,30 +12,29 @@ html, body {
       height: 98px;
       width: 100%;
 
-        ul{
+        .user-info{
           width: 260px;
           list-style-type: none;
           margin: 0 auto;
 
-          li{
+          & li{
             margin-right: 5px;
           }
 
-
-          li.user-name{
+          &__name{
             float: left;
             padding-top: 36px;
             p{
-              color: #FFFFFF;
+              color: White;
               font-weight: bold;
               font-size: 16px;
             }
           }
-          li.edit-group{
+          &__edit-group{
             float: right;
             padding-top: 36px;
             .fa-cog::before{
-              color: #FFFFFF;
+              color: White;
               content: "\f013";
               display: inline-block;
               margin-right: .5em;
@@ -45,11 +44,11 @@ html, body {
             }
           }
 
-          li.create-group{
+          &__create-group{
             float: right;
             padding-top: 36px;
               .fa-pencil-square-o::before {
-                color: #FFFFFF;
+                color: White;
                 content: "\f044";
                 display: inline-block;
                 margin-right: .5em;
@@ -61,18 +60,18 @@ html, body {
           }
         }
     }
-    .groups ul{
+    .group-list{
       width: 260px;
       list-style-type: none;
       margin: 0 auto;
       padding-top: 20px;
-      .group-name p{
+      &__group-name p{
         font-size: 15px;
-        color: #FFFFFF;
+        color: White;
       }
-      .group-news p{
+      &__group-news p{
         font-size: 12px;
-        color: #FFFFFF;
+        color: White;
         margin-top: 5px;
         padding-bottom: 40px
       }
