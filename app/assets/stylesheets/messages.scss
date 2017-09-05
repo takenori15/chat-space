@@ -17,6 +17,10 @@ html, body {
           list-style-type: none;
           margin: 0 auto;
 
+          li{
+            margin-right: 5px;
+          }
+
 
           li.user-name{
             float: left;
@@ -27,12 +31,33 @@ html, body {
               font-size: 16px;
             }
           }
-          li.hello{
+          li.edit-group{
             float: right;
             padding-top: 36px;
-            p{
+            .fa-cog::before{
               color: #FFFFFF;
+              content: "\f013";
+              display: inline-block;
+              margin-right: .5em;
+              font-family: fontawesome;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
             }
+          }
+
+          li.create-group{
+            float: right;
+            padding-top: 36px;
+              .fa-pencil-square-o::before {
+                color: #FFFFFF;
+                content: "\f044";
+                display: inline-block;
+                margin-right: .5em;
+                font-family: fontawesome;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+              }
+
           }
         }
     }
