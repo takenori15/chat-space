@@ -6,10 +6,11 @@ html, body {
     background-color: #2f3e51;
     height: 100%;
     width: 300px;
+    float: left;
 
     .user {
       background-color: #253141;
-      height: 98px;
+      height: 96px;
       width: 100%;
 
         .user-info{
@@ -23,7 +24,7 @@ html, body {
 
           &__name{
             float: left;
-            padding-top: 36px;
+            padding-top: 40px;
             p{
               color: White;
               font-weight: bold;
@@ -32,7 +33,7 @@ html, body {
           }
           &__edit-group{
             float: right;
-            padding-top: 36px;
+            padding-top: 40px;
             .fa-cog::before{
               color: White;
               content: "\f013";
@@ -46,7 +47,7 @@ html, body {
 
           &__create-group{
             float: right;
-            padding-top: 36px;
+            padding-top: 40px;
               .fa-pencil-square-o::before {
                 color: White;
                 content: "\f044";
@@ -65,6 +66,7 @@ html, body {
       list-style-type: none;
       margin: 0 auto;
       padding-top: 20px;
+
       &__group-name p{
         font-size: 15px;
         color: White;
@@ -76,6 +78,65 @@ html, body {
         padding-bottom: 40px
       }
     }
+  }
+
+  .chat-show{
+    background-color: #AAAAAA;
+    height: 100%;
+    width: calc(100vw - 300px);
+    float: left;
+
+    .chat-show-group{
+      height: 96px;
+      width: calc(100% - 120px);
+      background-color: White;
+      border-bottom-style: solid;
+      border-bottom: -1px;
+      border-bottom-color: #eeeeee;
+      float: left;
+
+      &__name {
+        width: 600px;
+        float: left;
+        .name p{
+        font-size: 20px;
+        color: #333333;
+        padding-top: 35px;
+        padding-left: 40px;
+        }
+        .members p{
+          font-size: 12px;
+          color: #999999;
+          margin-top: 15px;
+          padding-left: 40px;
+        }
+      }
+    }
+    .edit-button{
+      height: 96px;
+      width: 120px;
+      background-color: White;
+      border-bottom-style: solid;
+      border-bottom: -1px;
+      border-bottom-color: #eeeeee;
+      float: right;
+      button{
+        background-color: White;
+        height: 40px;
+        width: 70px;
+        border-style: solid;
+        border-color: #38AEF0;
+        border: -1px;
+        float: right;
+        margin-right: 40px;
+        margin-top: 28px;
+        p{
+          font-size: 15px;
+          padding: 0 20;
+        }
+      }
+    }
+
   }
 }
 
