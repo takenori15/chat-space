@@ -136,6 +136,30 @@ html, body {
         }
       }
     }
+    .chat-list{
+      height: 100%;
+      width: 100%;
+      background-color: White;
+      padding-top: 142px;
+      &__content{
+        margin-left: 40px;
+        padding-bottom: 40px;
+        .member-name{
+          font-size: 20px;
+          float: left;
+        }
+        .chat-date{
+          font-size: 15px;
+          float: left;
+          margin-left: 10px;
+          padding-top: 5px;
+        }
+        .chat-text{
+          margin-top: 10px;
+          clear: both;
+        }
+      }
+    }
 
   }
 }
