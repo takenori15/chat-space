@@ -27,11 +27,11 @@
       =render :partial => 'chat-list'
     %div.chat-form
       %form
-        %input.withicon{"type" => "text", "name" => "chat-text", "rows" => "1", "cols" => "30"}
+        %input.withicon{type: "text", name: "chat_text", rows: 1, cols: 30}
         %label.chat-file
-          %input.fileinput{"type"=> "file"}
+          %input.fileinput{type: "file"}
           %i.fa.fa-picture-o
-        %input.send-button{"type" => "submit", "value" => "SEND"}
+        %input.send-button{type: "submit", value: "SEND"}
 
 
 
