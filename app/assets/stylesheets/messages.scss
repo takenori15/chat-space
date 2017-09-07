@@ -2,6 +2,14 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0px;
+  .notification{
+    width: 100%;
+    top: 0;
+    background-color: #38AEF0;
+    height: 24px;
+    text-align: center;
+    color: White;
+  }
   .side-bar{
     background-color: #2f3e51;
     height: 100%;
@@ -181,7 +189,7 @@ html, body {
           margin-top: 20px;
           height: 50px;
           float: left;
-          width: calc(100% - 200px);
+          width: calc(100% - 190px);
         }
         // .select-image{
         //   height: 20px;
@@ -213,7 +221,7 @@ html, body {
           height: 50px;
           border: none;
           float: right;
-
+          color: White;
         }
       }
     }
