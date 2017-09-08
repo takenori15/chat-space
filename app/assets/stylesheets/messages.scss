@@ -1,0 +1,218 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  .notification{
+    width: 100%;
+    top: 0;
+    background-color: $LightBlue;
+    height: 24px;
+    text-align: center;
+    color: $White;
+  }
+  .side-bar{
+    background-color: $DarkBlue;
+    height: 100%;
+    width: 300px;
+    float: left;
+
+    .user {
+      background-color: $UserBlue;
+      height: 96px;
+      width: 100%;
+
+        .user-info{
+          width: 260px;
+          list-style-type: none;
+          margin: 0 auto;
+
+          & li{
+            margin-right: 5px;
+          }
+
+          &__name{
+            float: left;
+            padding-top: 40px;
+            p{
+              color: $White;
+              font-weight: bold;
+              font-size: 16px;
+            }
+          }
+          &__edit-group{
+            float: right;
+            padding-top: 40px;
+            .fa-cog::before{
+              color: $White;
+              content: "\f013";
+              display: inline-block;
+              margin-right: .5em;
+              font-family: fontawesome;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+          }
+
+          &__create-group{
+            float: right;
+            padding-top: 40px;
+              .fa-pencil-square-o::before {
+                color: $White;
+                content: "\f044";
+                display: inline-block;
+                margin-right: .5em;
+                font-family: fontawesome;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+              }
+
+          }
+        }
+    }
+    .group-list{
+      width: 260px;
+      list-style-type: none;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      &__group-name p{
+        font-size: 15px;
+        color: White;
+      }
+      &__group-news p{
+        font-size: 12px;
+        color: White;
+        margin-top: 5px;
+        padding-bottom: 40px
+      }
+    }
+  }
+
+  .chat-show{
+    background-color: $ChatBackGround;
+    height: 100%;
+    width: calc(100vw - 300px);
+    float: left;
+
+    .chat-show-group{
+      height: 96px;
+      width: calc(100% - 120px);
+      background-color: White;
+      border-bottom-style: solid;
+      border-bottom: -1px;
+      border-bottom-color: $BorderGray;
+      float: left;
+
+      &__name {
+        float: left;
+        .name p{
+        font-size: 20px;
+        color: $GroupName;
+        padding-top: 35px;
+        padding-left: 40px;
+        }
+        .members p{
+          font-size: 12px;
+          color: $Detailgray;
+          margin-top: 15px;
+          padding-left: 40px;
+        }
+      }
+    }
+    .edit-button{
+      height: 96px;
+      width: 120px;
+      background-color: $White;
+      border-bottom-style: solid;
+      border-bottom: -1px;
+      border-bottom-color: $BorderGray;
+      float: right;
+      button{
+        background-color: White;
+        height: 40px;
+        width: 70px;
+        border-style: solid;
+        border-color: $LightBlue;
+        border: -1px;
+        float: right;
+        margin-right: 40px;
+        margin-top: 28px;
+        p{
+          font-size: 15px;
+          padding: 0 20;
+        }
+      }
+    }
+    .chat-list{
+      height: calc(100% - 142px);
+      width: 100%;
+      background-color: $White;
+      padding-top: 142px;
+      &__content{
+        margin-left: 40px;
+        padding-bottom: 40px;
+        .member-name{
+          font-style: bold;
+          font-size: 16px;
+          float: left;
+        }
+        .chat-date{
+          font-size: 12px;
+          color: $Detailgray;
+          float: left;
+          margin-left: 10px;
+
+        }
+        .chat-text{
+          font-size: 14px;
+          color: $Chatblack;
+          margin-top: 10px;
+          clear: both;
+        }
+      }
+    }
+    .chat-form{
+      position: fixed;
+      width:inherit;
+      bottom: 0;
+      height: 90px;
+      background-color: $ChatBackGround;
+      form{
+        .withicon{
+          margin-left: 40px;
+          margin-top: 20px;
+          height: 50px;
+          float: left;
+          width: calc(100% - 190px);
+        }
+
+
+        .chat-file{
+          position: absolute;
+          right: 150px;
+          top: 36px;
+          width: 30px;
+        }
+
+        .fileinput{
+          width:0px;
+          height:0px;
+          visibility: hidden;}
+        .send-button{
+          background-color: $LightBlue;
+          display: inline-block;
+          margin-top: 20px;
+          margin-left: 15px;
+          margin-right: 40px;
+          line-height: 50px;
+          width: 90px;
+          height: 50px;
+          border: none;
+          float: right;
+          color: $White;
+        }
+      }
+    }
+
+  }
+}
