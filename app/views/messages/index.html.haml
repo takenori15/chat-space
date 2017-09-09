@@ -6,12 +6,8 @@
         %li.user-info__name
           %p tarou
         %li.user-info__edit-group
-          -if user_signed_in?
-            =link_to "users/#{@user.id}/edit", method: :get do
-              %i.fa.fa-cog
-          -else
-            =link_to "users/sign_in", method: :get do
-              %i.fa.fa-cog
+          =link_to "users/#{@user.id}/edit", method: :get do
+            %i.fa.fa-cog
 
         %li.user-info__create-group
           %a.icon.fa-pencil-square-o{href: "sample"}
