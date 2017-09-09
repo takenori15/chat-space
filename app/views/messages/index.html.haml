@@ -3,7 +3,7 @@
     %div.user
       %ul.user-info
         %li.user-info__name
-          %p tarou
+          %p #{@user.name}
         %li.user-info__edit-group
           =link_to "users/#{@user.id}/edit", method: :get do
             %i.fa.fa-cog
