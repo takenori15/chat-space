@@ -6,7 +6,6 @@
         %li.user-info__name
           %p tarou
         %li.user-info__edit-group
-          //%a.icon.fa-cog{href: "users/:id/edit"}
           =link_to "users/#{@user.id}/edit", method: :get do
             %i.fa.fa-cog
 
