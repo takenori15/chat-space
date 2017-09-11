@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 
   def create
     Group.create(group_params)
-
+    redirect_to :root, :notice => "グループの作成に成功しました！"
   end
 
   def edit
