@@ -5,8 +5,13 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(group_params)
-    redirect_to :root, :notice => "グループの作成に成功しました！"
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to :root, :notice => "グループの作成に成功しました！"
+    else
+      render :new
+    end
+
   end
 
   def edit
