@@ -1,5 +1,6 @@
-%ul.group-list
-  %li.group-list__group-name
-    %p tarou's house
-  %li.group-list__group-news
-    %p まだ新着メッセージはありません。
+-groups.each do |group|
+  %ul.group-list
+    %li.group-list__group-name
+      %p #{group.group_name}
+    %li.group-list__group-news
+      %p まだ新着メッセージはありません。

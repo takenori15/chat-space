@@ -13,7 +13,7 @@
             %i.fa.fa-pencil-square-o
 
     %div.groups
-      =render :partial => 'group'
+      =render partial: 'group', locals: {groups: @groups}
 
   %div.chat-show
     %div.chat-show-group
