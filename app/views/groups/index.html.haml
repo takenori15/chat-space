@@ -1,0 +1,16 @@
+%body
+  .side-bar
+    .user
+      %ul.user-info
+        %li.user-info__name
+          %p #{current_user.name}
+        %li.user-info__edit-group
+          =link_to "users/#{current_user.id}/edit", method: :get do
+            %i.fa.fa-cog
+
+        %li.user-info__create-group
+          =link_to new_group_path, method: :get do
+            %i.fa.fa-pencil-square-o
+
+    .groups
+      =render partial: 'group', locals: {groups: @groups}
