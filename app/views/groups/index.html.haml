@@ -1,6 +1,6 @@
 %body
-  %div.side-bar
-    %div.user
+  .side-bar
+    .user
       %ul.user-info
         %li.user-info__name
           %p #{current_user.name}
@@ -12,5 +12,5 @@
           =link_to new_group_path, method: :get do
             %i.fa.fa-pencil-square-o
 
-    %div.groups
+    .groups
       =render partial: 'group', locals: {groups: @groups}

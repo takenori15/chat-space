@@ -1,6 +1,6 @@
 %body
-  %div.side-bar
-    %div.user
+  .side-bar
+    .user
       %ul.user-info
         %li.user-info__name
           %p #{@user.name}
@@ -12,22 +12,22 @@
           =link_to new_group_path, method: :get do
             %i.fa.fa-pencil-square-o
 
-    %div.groups
+    .groups
       =render partial: 'group', locals: {groups: @groups}
 
-  %div.chat-show
-    %div.chat-show-group
+  .chat-show
+    .chat-show-group
       %ul.chat-show-group__name
         %li.name
           %p sampleグループ
         %li.members
           %p Members: tarou, jirou
-    %div.edit-button
+    .edit-button
       %button
         %p Edit
-    %div.chat-list
+    .chat-list
       =render :partial => 'chat-list'
-    %div.chat-form
+    .chat-form
       %form
         %input.withicon{type: "text", name: "chat_text", rows: 1, cols: 30, placeholder: "type a message"}
         %label.chat-file
