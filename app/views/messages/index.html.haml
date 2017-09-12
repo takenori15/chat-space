@@ -9,7 +9,8 @@
             %i.fa.fa-cog
 
         %li.user-info__create-group
-          %a.icon.fa-pencil-square-o{href: "sample"}
+          =link_to new_group_path, method: :get do
+            %i.fa.fa-pencil-square-o
 
     %div.groups
       =render :partial => 'group'
