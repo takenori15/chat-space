@@ -177,7 +177,7 @@ html, body {
       bottom: 0;
       height: 90px;
       background-color: $ChatBackGround;
-      form{
+      .new_message{
         .withicon{
           margin-left: 40px;
           margin-top: 20px;
@@ -192,12 +192,12 @@ html, body {
           right: 150px;
           top: 36px;
           width: 30px;
-        }
-
-        .fileinput{
+          .fileinput{
           width:0px;
           height:0px;
           visibility: hidden;}
+        }
+
         .send-button{
           background-color: $LightBlue;
           display: inline-block;
