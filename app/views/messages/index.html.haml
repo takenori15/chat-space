@@ -3,7 +3,7 @@
     .user
       %ul.user-info
         %li.user-info__name
-          %p #{@user.name}
+          %p #{current_user.name}
         %li.user-info__edit-group
           =link_to edit_user_path(@group, @message), method: :get do
             %i.fa.fa-cog
