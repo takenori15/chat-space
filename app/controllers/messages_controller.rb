@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = @group.messages.new(message_params)
     if @message.save
       flash[:notice] = "送信成功"
       redirect_to action: :index
@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:body, :image).merge(group_id: @group.id, user_id: current_user.id)
+    params.require(:message).permit(:body, :image, :group_id).merge(user_id: current_user.id)
   end
 
   def set_group
