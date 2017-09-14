@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @messages = @group.messages
     @message = @group.messages.new(message_params)
     if @message.save
       flash[:notice] = "送信成功"
