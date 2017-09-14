@@ -1,14 +1,18 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group
+  before_action :set_current_groups
   def index
-    @groups = current_user.groups
     @message = Message.new
   end
 
   def create
     @message = Message.new(message_params)
-    @message.save
+    if @message.save
+      redirect_to action: :index
+    else
+      render :index
+    end
   end
 
   private
@@ -18,5 +22,9 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_current_groups
+    @groups = current_user.groups
   end
 end

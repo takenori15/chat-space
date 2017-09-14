@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   validate :two_values_should_be_included
 
   def two_values_should_be_included
-    condition = body && image
-    errors.add(:body, "どちらの値も入力されていません！") if condition.blank?
+    condition = body || image
+    errors.add(:body, "") unless condition.present?
   end
 end
