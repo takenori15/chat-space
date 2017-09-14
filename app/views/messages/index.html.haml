@@ -26,7 +26,7 @@
       %button
         %p Edit
     .chat-list
-      =render :partial => 'chat-list'
+      =render :partial => 'chat-list', locals: {messages: @messages}
     .chat-form
       =form_for [@group, @message] do |f|
         =f.text_field :body, placeholder: "type a message", rows: 1, cols: 30, class: "withicon"
