@@ -9,8 +9,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
+      flash[:notice] = "送信成功"
       redirect_to action: :index
     else
+      flash.now[:alert] = "送信失敗"
       render :index
     end
   end
