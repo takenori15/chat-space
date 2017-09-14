@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group
-  before_action :set_current_groups
   def index
     @message = Message.new
   end
@@ -26,7 +25,4 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
-  def set_current_groups
-    @groups = current_user.groups
-  end
 end
