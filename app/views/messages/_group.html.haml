@@ -3,4 +3,7 @@
     %li.group-list__group-name
       %p #{group.group_name}
     %li.group-list__group-news
-      %p まだ新着メッセージはありません。
+      -if group.messages.last.present?
+        %p #{group.messages.last.body}
+      -else
+        %p 最新のメッセージはありません。
