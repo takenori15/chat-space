@@ -9,6 +9,7 @@ html, body {
     height: 100%;
     width: 300px;
     float: left;
+    overflow: scroll;
 
     .user {
       background-color: $UserBlue;
@@ -63,30 +64,42 @@ html, body {
           }
         }
     }
-    .group-list{
-      width: 260px;
-      list-style-type: none;
-      margin: 0 auto;
-      padding-top: 20px;
+    .groups{
+      background-color: $DarkBlue;
+      padding-bottom: 80px;
+      .group-list{
+        width: 260px;
+        list-style-type: none;
+        margin: 0 auto;
+        padding-top: 20px;
 
-      &__group-name p{
-        font-size: 15px;
-        color: White;
+        &__group-name p{
+          font-size: 15px;
+          color: White;
+        }
+        &__group-news p{
+          font-size: 12px;
+          color: White;
+          margin-top: 5px;
+          padding-bottom: 40px
+        }
       }
-      &__group-news p{
-        font-size: 12px;
-        color: White;
-        margin-top: 5px;
-        padding-bottom: 40px
-      }
+    }
+    .fix-blank{
+      position: fixed;
+      width:inherit;
+      bottom: 0;
+      height: 90px;
+      background-color: $DarkBlue;
     }
   }
 
   .chat-show{
-    background-color: $ChatBackGround;
+    /*background-color: $ChatBackGround;*/
     height: 100%;
     width: calc(100vw - 300px);
     float: left;
+    overflow: scroll;
 
     .chat-show-group{
       height: 96px;
@@ -138,10 +151,11 @@ html, body {
       }
     }
     .chat-list{
-      height: calc(100% - 142px);
+      /*height: calc(100% - 142px);*/
       width: 100%;
       background-color: $White;
-      padding-top: 142px;
+      margin-top: 122px;
+      padding-bottom: 80px;
       &__content{
         margin-left: 40px;
         padding-bottom: 40px;
