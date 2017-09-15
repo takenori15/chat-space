@@ -20,12 +20,13 @@
     .chat-show-group
       %ul.chat-show-group__name
         %li.name
-          %p sampleグループ
+          %p #{@group.group_name}
         %li.members
-          %p Members: tarou, jirou
+          %p Members: #{@group.users.map(&:name).join(',')}
     .edit-button
-      %button
-        %p Edit
+      =link_to edit_group_path(@group.id) do
+        %button
+          %p Edit
     .chat-list
       =render :partial => 'chat-list', locals: {messages: @messages}
     .chat-form
