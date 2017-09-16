@@ -1,4 +1,4 @@
-html, body {
+.whole-page{
   height: 100%;
   width: 100%;
   margin: 0px;
@@ -9,12 +9,11 @@ html, body {
     height: 100%;
     width: 300px;
     float: left;
-    overflow: scroll;
 
     .user {
       background-color: $UserBlue;
       height: 96px;
-      width: 100%;
+      width: inherit;
 
         .user-info{
           width: 260px;
@@ -64,34 +63,34 @@ html, body {
           }
         }
     }
-    .groups{
-      background-color: $DarkBlue;
-      padding-bottom: 80px;
-      .group-list{
-        width: 260px;
-        list-style-type: none;
-        margin: 0 auto;
-        padding-top: 20px;
-        display: block;
-        &__group-name p{
-          font-size: 15px;
-          color: White;
+        .groups {
+          background-color: $DarkBlue;
+          padding-bottom: 122px;
+          overflow: scroll;
+          height: 100vh;
+          a{
+            text-decoration: none;
+            .group-list{
+              width: 260px;
+              list-style-type: none;
+              margin: 0 auto;
+              padding-top: 20px;
+              display: block;
+              text-decoration: none;
+              &__group-name p{
+                font-size: 15px;
+                color: White;
+                text-decoration: none;
+              }
+              &__group-news p{
+                font-size: 12px;
+                color: White;
+                margin-top: 5px;
+                padding-bottom: 40px
+              }
+            }
+          }
         }
-        &__group-news p{
-          font-size: 12px;
-          color: White;
-          margin-top: 5px;
-          padding-bottom: 40px
-        }
-      }
-    }
-    .fix-blank{
-      position: fixed;
-      width:inherit;
-      bottom: 0;
-      height: 90px;
-      background-color: $DarkBlue;
-    }
   }
 
   .chat-show{
@@ -99,7 +98,6 @@ html, body {
     height: 100%;
     width: calc(100vw - 300px);
     float: left;
-    overflow: scroll;
 
     .chat-show-group{
       height: 96px;
@@ -156,6 +154,8 @@ html, body {
       background-color: $White;
       margin-top: 122px;
       padding-bottom: 80px;
+      overflow: scroll;
+      height: 100vh;
       &__content{
         margin-left: 40px;
         padding-bottom: 40px;
