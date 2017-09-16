@@ -3,3 +3,6 @@
     %li.member-name #{message.user.name}
     %li.chat-date #{message.created_at}
     %li.chat-text #{message.body}
+    -if message.image.present?
+      %li.chat-image
+        =image_tag message.image.thumb.url
