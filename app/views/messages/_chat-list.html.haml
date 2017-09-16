@@ -1,4 +1,8 @@
-%ul.chat-list__content
-  %li.member-name tarou
-  %li.chat-date 2017/09/05 07:54:06
-  %li.chat-text なるほど
+-messages.each do |message|
+  %ul.chat-list__content
+    %li.member-name #{message.user.name}
+    %li.chat-date #{message.created_at}
+    %li.chat-text #{message.body}
+    -if message.image.present?
+      %li.chat-image
+        =image_tag message.image.thumb.url

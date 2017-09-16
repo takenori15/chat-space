@@ -3,9 +3,11 @@ class MessagesController < ApplicationController
   before_action :set_group
   def index
     @message = Message.new
+    @messages = @group.messages
   end
 
   def create
+    @messages = @group.messages
     @message = @group.messages.new(message_params)
     if @message.save
       flash[:notice] = "送信成功"

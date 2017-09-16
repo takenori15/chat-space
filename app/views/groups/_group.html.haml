@@ -1,6 +1,10 @@
 -groups.each do |group|
-  %ul.group-list
-    %li.group-list__group-name
-      %p #{group.group_name}
-    %li.group-list__group-news
-      %p まだ新着メッセージはありません。
+  =link_to group_messages_path(group.id) do
+    %ul.group-list
+      %li.group-list__group-name
+        %p #{group.group_name}
+      %li.group-list__group-news
+        -if group.messages.last.present?
+          %p #{group.messages.last.body}
+        -else
+          %p まだメッセージはありません。

@@ -1,4 +1,4 @@
-%body
+.whole-page
   .side-bar
     .user
       %ul.user-info
@@ -19,14 +19,15 @@
     .chat-show-group
       %ul.chat-show-group__name
         %li.name
-          %p sampleグループ
+          %p #{@group.group_name}
         %li.members
-          %p Members: tarou, jirou
+          %p Members: #{@group.users.map(&:name).join(',')}
     .edit-button
-      %button
-        %p Edit
+      =link_to edit_group_path(@group.id) do
+        %button
+          %p Edit
     .chat-list
-      =render :partial => 'chat-list'
+      =render partial: 'chat-list', locals: {messages: @messages}
     .chat-form
       =form_for [@group, @message] do |f|
         =f.text_field :body, placeholder: "type a message", rows: 1, cols: 30, class: "withicon"
