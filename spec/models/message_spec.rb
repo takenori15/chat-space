@@ -21,4 +21,24 @@ describe Message do
     end
   end
 
+  describe '#create' do
+    it "is invalid if a message doesn't have both a body and a image" do
+      message = build(:message, body: "", image: "")
+      expect(message).not_to be_valid
+    end
+  end
+
+  describe '#create' do
+    it "is invalid if a message doesn't have a group_id" do
+      message = build(:message, group_id: "")
+      expect(message).not_to be_valid
+    end
+  end
+
+  describe '#create' do
+    it "is invalid if a message doens't have a user_id" do
+      message = build(:message, user_id: "")
+      expect(message).not_to be_valid
+    end
+  end
 end
