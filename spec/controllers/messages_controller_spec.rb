@@ -34,4 +34,44 @@ describe MessagesController, type: :controller do
       expect(response).to redirect_to(new_user_session_path)
     end
   end
+
+  describe 'POST #create' do
+    before do
+      login_user user
+    end
+
+    it "saves the new message in the database when a user is signed in" do
+      group = create(:group)
+      expect{
+        post :create, group_id: group, message: attributes_for(:message)
+      }.to change(Message, :count).by(1)
+    end
+
+    it "redirect to the :create template" do
+      group = create(:group)
+      post :create, group_id: group, message: attributes_for(:message)
+      expect(response).to redirect_to(group_messages_path)
+    end
+
+    it "could not save a message in the database when a user is signed in" do
+      group = create(:group)
+      expect{
+        post :create, group_id: group, message: attributes_for(:message, body: nil, image: nil)
+      }.not_to change(Message, :count)
+    end
+
+    it "render the :index template when it could not save a message" do
+      group = create(:group)
+      post :create, group_id: group, message: attributes_for(:message, body: nil, image: nil)
+      expect(response).to render_template :index
+    end
+  end
+
+  describe 'POST #create' do
+    it "redirect when a user who isn't signed in tries to send a message" do
+      group = create(:group)
+      post :create, group_id: group, message: attributes_for(:message)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+  end
 end
