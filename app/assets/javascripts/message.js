@@ -1,24 +1,9 @@
 $(function(){
   function buildHTML(message){
-    if(typeof(message.image) !== "undefined" ){
-      var image_data = message.image;
-      var html = `<ul class="chat-list__content">
-                  <li class="member-name">
-                    ${message.user_name}
-                  </li>
-                  <li class="chat-date">
-                    ${message.time}
-                  </li>
-                  <li class="chat-text">
-                    ${message.text}
-                  </li>
-                  <li class="chat-image">
-                    <img src = "${image_data.thumb.url}">
-                  </li>
-                </ul>`
-    return html;
-    }else{
-      var image_data = "";
+      var image_data = (typeof(message.image) !== "undefined"
+      ? message.image.thumb.url
+      : ""
+      );
       var html = `<ul class="chat-list__content">
                   <li class="member-name">
                     ${message.user_name}
@@ -34,8 +19,8 @@ $(function(){
                   </li>
                 </ul>`
     return html;
-    }
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
