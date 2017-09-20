@@ -29,7 +29,7 @@
     .chat-list
       =render partial: 'chat-list', locals: {messages: @messages}
     .chat-form
-      =form_for [@group, @message] do |f|
+      =form_for [@group, @message], html: {id: 'new_message'} do |f|
         =f.text_field :body, placeholder: "type a message", rows: 1, cols: 30, class: "withicon"
         =f.label :image, class: "chat-file" do
           =f.file_field :image, class: "fileinput"

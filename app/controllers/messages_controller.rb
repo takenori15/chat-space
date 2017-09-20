@@ -10,12 +10,15 @@ class MessagesController < ApplicationController
     @messages = @group.messages
     @message = @group.messages.new(message_params)
     if @message.save
-      flash[:notice] = "送信成功"
-      redirect_to action: :index
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "送信成功" }
+        format.json
+      end
     else
       flash.now[:alert] = "送信失敗"
       render :index
     end
+
   end
 
   private
