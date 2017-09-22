@@ -7,12 +7,6 @@ function appendUser(user){
               </div>`
   search_list.append(html);
 }
-function appendNoUser(user){
-  var html =                `<div class="chat-group-user clearfix">
-                              <p class="chat-group-user__name">${user}</p>
-                             </div>`
-  search_list.append(html)
-}
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
     $.ajax({
@@ -27,9 +21,6 @@ function appendNoUser(user){
         users.forEach(function(user){
           appendUser(user);
         });
-      }
-      else{
-        appendNoUser("一致するユーザーはいません。");
       }
     })
     .fail(function(){
