@@ -24,10 +24,7 @@ function appendUserList(id, name){
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: {
-        keyword: input,
-        group_id: groupId
-      },
+      data: {keyword: input},
       dataType: 'json'
     })
     .done(function(users){
