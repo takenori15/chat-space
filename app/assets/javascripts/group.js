@@ -42,10 +42,10 @@ function appendUserList(id, name){
   $(document).on("click", ".chat-group-user__btn--add", function(){
       var userId = $(this).attr('data-user-id');
       var userName = $(this).prev().text();
-      $(this).parent().empty()
+      $(this).parent().remove()
       appendUserList(userId, userName);
   })
   $(document).on("click", ".user-search-remove", function(){
-    $(this).parent().empty();
+    $(this).parent().remove();
   })
 });
