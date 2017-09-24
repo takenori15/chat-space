@@ -4,7 +4,7 @@ $(function(){
       ? message.image.thumb.url
       : ""
       );
-      var html = `<ul class="chat-list__content">
+      var html = `<ul class="chat-list__content" data-id= "${message.id}" >
                   <li class="member-name">
                     ${message.user_name}
                   </li>
@@ -45,4 +45,32 @@ $(function(){
       alert('error');
     })
   })
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+
+  function update(){
+    var message_id = $('.chat-list__content:last').data('id');
+    console.log(message_id)
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: {id: message_id}
+      },
+      dataType: 'json'
+    })
+    .done(function(data){
+      $.each(data, function(i, data){
+        var html = buildHTML(data);
+        $('.chat-list').append(html).animate({
+          scrollTop: $('.chat-list')[0].scrollHeight
+        }, 'fast');
+      })
+    })
+    .fail(function(){
+      alert('error');
+    })
+  }
 })
