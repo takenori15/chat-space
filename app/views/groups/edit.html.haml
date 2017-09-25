@@ -32,13 +32,13 @@
           -@group.users.each do |user|
             -unless user == current_user
               .chat-group-user.clearfix.js-chat-member{id: 'chat-group-user-8'}
-                %input{name: 'group[user_ids][]', type: 'hidden', value: '#{user.id}'}
+                %input{name: 'group[user_ids][]', type: 'hidden', value: user.id }
                 .chat-group-user__name
                   #{user.name}
                 .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
             -else
               .chat-group-user.clearfix.js-chat-member{id: 'chat-group-user-8'}
-                %input{name: 'group[user_ids][]', type: 'hidden', value: '#{user.id}'}
+                %input{name: 'group[user_ids][]', type: 'hidden', value: user.id }
                 .chat-group-user__name
                   #{user.name}
     .chat-group-form__field.clearfix
