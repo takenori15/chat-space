@@ -52,7 +52,6 @@ $(function(){
 
   function update(){
     var message_id = $('.chat-list__content:last').data('id');
-    console.log(message_id)
     $.ajax({
       url: location.href,
       type: 'GET',
