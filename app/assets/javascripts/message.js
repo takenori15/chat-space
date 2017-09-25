@@ -61,7 +61,6 @@ $(function(){
       dataType: 'json'
     })
     .done(function(data){
-      console.log(data)
       $.each(data, function(i, data){
         var html = buildHTML(data);
         $('.chat-list').append(html).animate({
