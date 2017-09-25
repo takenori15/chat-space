@@ -46,32 +46,28 @@ $(function(){
     })
   })
 
-  if($('.chat-list__content')[0]){
-    $(function(){
-      setInterval(update, 5000);
-    });
 
-    function update(){
-      var message_id = $('.chat-list__content:last').data('id');
-      $.ajax({
-        url: location.href,
-        type: 'GET',
-        data: {
-          message: {id: message_id}
-        },
-        dataType: 'json'
-      })
-      .done(function(data){
-        $.each(data, function(i, data){
-          var html = buildHTML(data);
-          $('.chat-list').append(html).animate({
-            scrollTop: $('.chat-list')[0].scrollHeight
-          }, 'fast');
-        })
-      })
-      .fail(function(){
-        alert('error');
-      })
+  var interval = setInterval(function(){
+    var message_id = $('.chat-list__content:last').data('id');
+    if(typeof(message_id) == "undefined"){
+      message_id = ""
     }
-  }
-})
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: {id: message_id}
+      },
+      dataType: 'json'
+    })
+    .done(function(data){
+      console.log(data)
+      $.each(data, function(i, data){
+        var html = buildHTML(data);
+        $('.chat-list').append(html).animate({
+          scrollTop: $('.chat-list')[0].scrollHeight
+        }, 'fast');
+      })
+    })
+  }, 5000);
+});
