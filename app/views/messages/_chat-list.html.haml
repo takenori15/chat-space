@@ -1,5 +1,5 @@
 -messages.each do |message|
-  %ul.chat-list__content
+  %ul.chat-list__content{data: {id: message.id}}
     %li.member-name #{message.user.name}
     %li.chat-date #{message.created_at}
     %li.chat-text #{message.body}
